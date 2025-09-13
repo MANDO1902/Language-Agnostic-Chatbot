@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Chatbot</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our University</h1>
+        <p>Your one-stop information hub.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </section>
+        <section>
+            <h2>Admissions</h2>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </section>
+    </main>
+
+    <!-- Chatbot Container -->
+    <div id="chatbot-container">
+        <div id="chatbot-logo">
+            <img src="images/chatbot-icon.png" alt="Chatbot Logo">
+        </div>
+        <div id="chatbot-interface" class="hidden">
+            <div id="chatbot-header">
+                <span id="chatbot-title">University Bot</span>
+                <div id="language-switcher">
+                    <button data-lang="en" class="active">EN</button>
+                    <button data-lang="hi">HI</button>
+                </div>
+            </div>
+            <div id="chatbot-messages">
+                <!-- Chat messages will be loaded here -->
+            </div>
+            <div id="chatbot-input-area">
+                <input type="text" id="chatbot-input" placeholder="Type your message...">
+                <button id="chatbot-send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
