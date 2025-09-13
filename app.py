@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template, send_from_directory
 from flask_cors import CORS # For handling CORS if frontend and backend are on different ports/domains
 
 app = Flask(__name__)
@@ -64,6 +64,22 @@ fallback_messages = {
     "hi": "मुझे क्षमा करें, मेरे पास इस विषय पर जानकारी नहीं है। क्या आप मानव सहायता एजेंट से बात करना चाहेंगे?"
 }
 
+@app.route('/')
+def index():
+    with open('index.html', 'r', encoding='utf-8') as f:
+        return f.read()
+
+@app.route('/css/<path:filename>')
+def css_files(filename):
+    return send_from_directory('css', filename)
+
+@app.route('/js/<path:filename>')
+def js_files(filename):
+    return send_from_directory('js', filename)
+
+@app.route('/images/<path:filename>')
+def image_files(filename):
+    return send_from_directory('images', filename)
 
 @app.route('/chat', methods=['POST'])
 def chat():
